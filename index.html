@@ -10,6 +10,8 @@
             font-family: sans-serif;
             font-size: 2em;
             text-align: center;
+            display: flex;
+            justify-content: space-between;
         }
         canvas {
             border: solid .2em #fff;
@@ -18,8 +20,18 @@
     </style>
 </head>
 <body>
-    <div id="score"></div>
-    <canvas id="tetris" width="240" height="400"></canvas>
+    
+    <div id="player1">
+        <div id="score1"></div>
+        <canvas id="tetris1" width="240" height="400"></canvas>
+    </div>
+    
+    <div id="player2">
+        <div id="score2"></div>
+        <canvas id="tetris2" width="240" height="400"></canvas>
+    </div>
+    
+
     <script src="tetris.js"></script>
   
 </body>
