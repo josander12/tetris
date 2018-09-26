@@ -165,21 +165,21 @@ function player(playerNum, idNum) {
         if (collision(board, player)) {
             player.pos.y--;
             merge(board, player);
-            playerReset();
+            resetGame();
             clearRow();
             updateScore();
         }
         dropCounter = 0;
     }
 
-    function playerMove(offset) {
+    function movePiece(offset) {
         player.pos.x += offset;
         if (collision(board, player)) {
             player.pos.x -= offset;
         }
     }
 
-    function playerReset() {
+    function resetGame() {
         const pieces = 'TJLOSZI';
         player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
         player.pos.y = 0;
@@ -192,7 +192,7 @@ function player(playerNum, idNum) {
         }
     }
 
-    function playerRotate(dir) {
+    function rotatePiece(dir) {
         const pos = player.pos.x;
         let offset = 1;
         rotate(player.matrix, dir);
@@ -231,15 +231,15 @@ function player(playerNum, idNum) {
 
     document.addEventListener('keydown', event => {
         if (event.keyCode === playerNum.left) {
-            playerMove(-1);
+            movePiece(-1);
         } else if (event.keyCode === playerNum.right) {
-            playerMove(1);
+            movePiece(1);
         } else if (event.keyCode === playerNum.down) {
             playerDrop();
         } else if (event.keyCode === playerNum.rotateL) {
-            playerRotate(-1);
+            rotatePiece(-1);
         } else if (event.keyCode === playerNum.rotateR) {
-            playerRotate(1);
+            rotatePiece(1);
         }
     });
 
@@ -262,7 +262,7 @@ function player(playerNum, idNum) {
         score: 0,
     };
 
-    playerReset();
+    resetGame();
     updateScore();
     update();
     

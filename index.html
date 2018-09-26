@@ -5,29 +5,30 @@
     <title>Tetris</title>
     <style>
         body {
-            background: #202028;
-            color: #fff;
+            background: #2c2c2c;
+            color: red;
             font-family: sans-serif;
             font-size: 2em;
             text-align: center;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
         }
         canvas {
-            border: solid .2em #fff;
-            height: 90vh;
+            border: solid .2em #ffffff;
+            height: 85vh;
         }
+
     </style>
 </head>
 <body>
     
     <div id="player1">
-        <div id="score1"></div>
+        <div id="score1" class="score"></div>
         <canvas id="tetris1" width="240" height="400"></canvas>
     </div>
     
     <div id="player2">
-        <div id="score2"></div>
+        <div id="score2" class="score"></div>
         <canvas id="tetris2" width="240" height="400"></canvas>
     </div>
     
